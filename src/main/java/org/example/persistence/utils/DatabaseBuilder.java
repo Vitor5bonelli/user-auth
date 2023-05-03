@@ -35,11 +35,11 @@ public class DatabaseBuilder {
     private String createSqlUsertable(){
         return """
                 CREATE TABLE users (
-                          username    TEXT NOT NULL,
-                          birthdate   TEXT NOT NULL,
-                          email       TEXT NOT NULL,
-                          password    TEXT NOT NULL
-                        );
+                    email TEXT NOT NULL PRIMARY KEY UNIQUE,
+                    username TEXT NOT NULL,
+                    birthdate TEXT NOT NULL,
+                    password TEXT NOT NULL
+                );
                 """;
     }
 

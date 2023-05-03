@@ -1,17 +1,40 @@
 package org.example.application;
 
+import org.example.domain.usecases.UserUseCases;
 import org.example.persistence.utils.DatabaseBuilder;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        UserUseCases userCases = UserUseCases.getInstance();
         construirBanco();
 
         int opcao = 0;
-        while (opcao != 5){
+        while (opcao != 6){
             menu();
             opcao = entradaUser();
+
+            switch (opcao) {
+                //Cadastrar
+                case 1:
+                    userCases.cadastraUsuario();
+                    break;
+                //Logar
+                case 2:
+                    break;
+                //Listar todos
+                case 3:
+                    userCases.listaTodosOsCadastrados();
+                    break;
+                //Remover
+                case 4:
+                    break;
+                    //Popular banco
+                case 5:
+                    break;
+            }
+
         }
 
         System.out.println("Programa Encerrado!");
@@ -23,7 +46,8 @@ public class Main {
         System.out.println("<2> Entre como usuário.");
         System.out.println("<3> Listar usuários.");
         System.out.println("<4> Remover usuário.");
-        System.out.println("<5> Sair");
+        System.out.println("<5> Popular banco.");
+        System.out.println("<6> Sair");
         System.out.println("====================");
     }
 

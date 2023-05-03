@@ -12,6 +12,17 @@ public class Usuario extends Pessoa{
         this.senha = senha;
     }
 
+    public Usuario(String nome, String email, String senha) {
+        super(nome);
+        this.email = email;
+        this.senha = senha;
+    }
+
+    public Usuario(String email, String senha) {
+        this.email = email;
+        this.senha = senha;
+    }
+
     @Override
     public String toString() {
         return super.toString() + "Email: " + this.email + '\n';

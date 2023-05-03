@@ -12,6 +12,10 @@ public class Pessoa {
                 "Data de Nascimento=" + dataNascimento + '\n';
     }
 
+    public Pessoa(String nome) {
+        this.nome = nome;
+    }
+
     public String getNome() {
         return nome;
     }
